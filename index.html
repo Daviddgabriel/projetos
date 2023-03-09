@@ -15,12 +15,12 @@
       </ul>
     </nav>
   </header>
-  
+
   <section id="sobre">
     <h1>Sobre mim</h1>
     <p>Eu sou um  David Gabriel, tenho 27 e faço Analise e desevolvimento de sistemas.Fiz o curso de banco de dados e atualmente estou fazendo o de desenvolvedor back end PHP, estou começando na area e estou sempre buscando o aperfeiçoamento.</p>
   </section>
-  
+
   <section id="projetos">
     <h1>Meus projetos</h1>
     <div class="projeto">
@@ -29,26 +29,34 @@
       <a href="prova pronta correto.html">Ver mais</a>
     </div>
   </section>
-  
+
   <section id="contato">
     <h1>Entre em contato</h1>
     <form action="#">
       <label for="nome">Nome:</label>
       <input type="text" id="nome" name="nome" required>
-      
+
       <label for="email">E-mail:</label>
       <input type="email" id="email" name="email" required>
-      
+
       <label for="mensagem">Mensagem:</label>
       <textarea id="mensagem" name="mensagem" required></textarea>
-      
-      <input type="submit" value="Enviar">
+
+      <input type="submit" value="Enviar" onclick="this.value='Mensagem enviada!'">
     </form>
   </section>
-  
+
   <footer>
     <p>© 2023 Meu Portfólio</p>
   </footer>
-  
+
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const button = event.target.querySelector('input[type="submit"]');
+      button.value = 'Mensagem enviada!';
+    });
+  </script>
 </body>
 </html>
